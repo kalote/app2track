@@ -1,0 +1,40 @@
+<div class="container marginFooter">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="text-center">Personal Information</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12 text-left">
+              <div class="list-group-item">
+                <p class="infoTitle">Name</p>
+                <p>{{me.name}}</p>
+              </div>
+							<div class="list-group-item">
+                <p class="infoTitle">Email</p>
+  							<p>{{me.email}}</p>
+              </div>
+              <div class="list-group-item">
+                <p class="infoTitle">Gravatar</p>
+						    <div class="media gravatarText">
+  								<div class="media-left">
+  									<img src="{{me.gravatarUrl}}">
+  								</div>
+  								<div class="media-body">
+  									<span>
+  										Note: We use gravatar system. If you want to change your avatar,
+  										<a href="https://en.gravatar.com" target="_blank">click here</a>
+  									</span>
+  								</div>
+                </div>
+              </div>
+						</div>
+					</div>
+					<a class="btn btn-lg btn-primary btn-block btn" href="/user/edit/{{me.id}}">Edit</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

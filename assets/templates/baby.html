@@ -1,0 +1,52 @@
+<div class="container marginFooter" ng-controller="BabyCtrl">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h1 align="center">{{clock | date:'H:mm:ss'}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Add a baby</h3>
+        </div>
+        <div class="panel-body">
+          <form class="row someMargin">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+              <input type="text" class="form-control input-lg text-center" placeholder="What's your baby name ?" ng-model="formData.name">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="addBaby()">Add Baby</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="baby-list" class="row">
+    <div ng-repeat="baby in babies" class="col-md-4 col-sm-6 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{baby.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row someMargin">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+              <strong>Last feed</strong>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8" ng-show="baby.lastfeed">
+              {{baby.lastfeed | amCalendar}} (<span am-time-ago="baby.lastfeed"></span>)
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8" ng-show="!baby.lastfeed">
+              No data yet !
+            </div>
+          </div>
+          <div class="row someMargin">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <button class="btn btn-success btn-lg btn-block" ng-click="addFeedEvent(baby.id)">Feed now</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

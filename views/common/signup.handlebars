@@ -1,0 +1,53 @@
+<!-- SIGNUP FORM -->
+<div class="container-fluid marginFooter">
+  <div class="row">
+    <form id="sign-up-form" class="col-md-6 col-md-offset-3" name="signup">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="form-signin-heading">Create an account</h2>
+        </div>
+        <div class="panel-body">
+          <div class="control-group form-group col-md-12">
+            <label>Your full name</label>
+            <input type="text" class="form-control" placeholder="e.g. Daigo Umehara" name="name">
+          </div>
+
+          <div class="control-group form-group col-md-12">
+            <label>Your gender</label>
+            <div>
+              <label class="radio-inline">
+                <input type="radio" name="gender" value="Male"> Male
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="gender" value="Female"> Female
+              </label>
+            </div>
+          </div>
+
+          <div class="control-group form-group col-md-12">
+            <label>Your email address</label>
+            <input type="email" class="form-control" placeholder="daigo@umehara.com" name="email">
+          </div>
+
+          <div class="control-group form-group col-md-6">
+            <label>Choose a password</label>
+            <input type="password" class="form-control" placeholder="at least 6 characters" name="password" id="password">
+          </div>
+
+          <div class="control-group form-group col-md-6">
+            <label>Re-enter your password</label>
+            <input type="password" class="form-control" placeholder="one more time" name="confirmation">
+          </div>
+
+          <div class="control-group form-group col-md-12">
+            <button class="btn btn-primary btn-lg btn-block btnSignup" type="submit">
+              <span>Create Account</span>
+            </button>
+          </div>
+
+          <input type="hidden" name="_csrf" value="{{_csrf}}" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

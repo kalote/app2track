@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		<form class="form-login col-md-6 col-md-offset-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h2 class="form-login-heading">Please log in...</h2>
+				</div>
+				<div class="panel-body">
+					{{#if flash.err}}
+						<div class="col-md-12 alert alert-danger">
+						    <strong>{{flash.err.name}}:</strong>
+                {{flash.err.message}}
+						</div>
+					{{/if}}
+					<div class="control-group form-group col-md-12">
+						<label>Email</label>
+						<input type="text" class="form-control" name="email" placeholder="daigo@thebeast.com">
+					</div>
+					<div class="control-group form-group col-md-12">
+						<label>Password</label>
+						<input type="password" class="form-control" name="password" placeholder="daigo@thebeast.com">
+					</div>
+					<div class="control-group form-group col-md-12">
+						<button type="submit" class="btn btn-primary btn-lg btn-block loginSubmit">
+							<span>Log in</span>
+            </button>
+					</div>
+					<input type="hidden" name="_csrf" value="{{_csrf}}" />
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
