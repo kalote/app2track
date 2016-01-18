@@ -11,6 +11,15 @@
 
 ----
 
+## Release 0.2-Beta
+
+### Overview
+
+- Add Analytics account
+
+
+----
+
 ## Todo
 
 - Add "change" event
