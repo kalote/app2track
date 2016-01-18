@@ -31,6 +31,7 @@
   },
   "scripts": {
     "start": "node app.js",
+    "startProd": "NODE_ENV=prod node app.js",
     "debug": "node debug app.js",
     "test": "PORT=9999 NODE_ENV=test mocha -R spec -b --recursive",
     "cover": "$(npm bin)/istanbul cover _mocha test/**/*.js --dir test_coverage"

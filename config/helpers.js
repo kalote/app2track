@@ -1,8 +1,13 @@
 'use strict';
 
-var Handlebars = require('handlebars'),
-    _ = require('lodash'),
+var _ = require('lodash'),
     sails = require('sails');
+
+if (process.env.NODE_ENV != undefined){
+  var Handlebars = require('sails/node_modules/express-handlebars/node_modules/handlebars');
+} else {
+  var Handlebars = require('handlebars');
+}
 
 // format date by a given format.
 // usage : {{#date format="YYYY" }} {{date}} {{/date}} => return Year
