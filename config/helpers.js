@@ -1,6 +1,6 @@
 'use strict';
 
-var Handlebars = require('handlebars'),
+var Handlebars = require('sails/node_modules/express-handlebars/node_modules/handlebars'),
     _ = require('lodash'),
     sails = require('sails');
 

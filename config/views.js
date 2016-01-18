@@ -15,5 +15,6 @@ var Handlebars = require('handlebars');
 module.exports.views = {
   engine: 'handlebars',
   partials: 'partials',
-  layouts: true
+  layouts: true,
+  helpers: require('./helpers')
 };
