@@ -16,7 +16,7 @@
 ### Overview
 
 - Add Analytics account
-
+- Quantity option
 
 ----
 
@@ -24,4 +24,3 @@
 
 - Add "change" event
 - Add Statistic page
-- Add quantity option when feed

@@ -8,6 +8,12 @@ module.exports={
       type: 'date',
       defaultsTo: new Date(0)
     },
+    amount: {
+      type: 'string'
+    },
+    changetype: {
+      type: 'string'
+    },
     baby: {
       model: 'baby'
     }

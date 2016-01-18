@@ -5,23 +5,33 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
+    <form class="col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Add a baby</h3>
         </div>
         <div class="panel-body">
-          <form class="row someMargin">
-            <div class="col-md-8 col-sm-8 col-xs-12">
-              <input type="text" class="form-control input-lg text-center" placeholder="What's your baby name ?" ng-model="formData.name">
+          <div class="control-group form-group col-md-4 col-sm-6 col-xs-12">
+            <label>Your baby's name</label>
+            <input type="text" class="form-control" ng-model="formData.name">
+          </div>
+          <div class="control-group form-group col-md-4 col-sm-6 col-xs-12">
+            <label>Your baby's gender</label>
+            <div>
+              <label class="radio-inline">
+                <input type="radio" name="gender" value="Male" ng-model="formData.gender"> Male
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="gender" value="Female" ng-model="formData.gender"> Female
+              </label>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="addBaby()">Add Baby</button>
-            </div>
-          </form>
+          </div>
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="addBaby()">Add Baby</button>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   </div>
   <div id="baby-list" class="row">
     <div ng-repeat="baby in babies" class="col-md-4 col-sm-6 col-xs-12">
@@ -35,16 +45,27 @@
               <strong>Last feed</strong>
             </div>
             <div class="col-md-8 col-sm-8 col-xs-8" ng-show="baby.lastfeed">
-              {{baby.lastfeed | amCalendar}} (<span am-time-ago="baby.lastfeed"></span>)
+              {{baby.lastfeed | amCalendar}} (<span am-time-ago="baby.lastfeed"></span>) - <strong>{{baby.lastfeedamount}}ml</strong>
             </div>
             <div class="col-md-8 col-sm-8 col-xs-8" ng-show="!baby.lastfeed">
               No data yet !
             </div>
           </div>
           <div class="row someMargin">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <button class="btn btn-success btn-lg btn-block" ng-click="addFeedEvent(baby.id)">Feed now</button>
-            </div>
+            <form>
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <fieldset class="form-group">
+                  <select ng-model="baby.feed.qty" class="form-control" title="Quantity" required>
+                    <option value="">Quantity</option>
+                    <option ng-repeat="option in feedList.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-8">
+                <button class="btn btn-success btn-block" ng-click="addFeedEvent(baby.id, baby.feed.qty)">Feed now</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -11,8 +11,14 @@ module.exports = {
     lastfeed: {
       type: 'date'
     },
+    lastfeedamount: {
+      type: 'string'
+    },
     lastchange: {
       type: 'date'
+    },
+    lastchangetype: {
+      type: 'string'
     },
     events: {
       collection: 'event',
